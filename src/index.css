@@ -1,0 +1,174 @@
+@import "bootstrap/dist/css/bootstrap.min.css";
+@import "tailwindcss";
+
+:root {
+  --primary-color: #2563eb;
+  --primary-dark: #1d4ed8;
+  --secondary-color: #475569;
+  --bg-subtle: #f8fafc;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background-color: #f1f5f9;
+  color: #1e293b;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Application Layout Structure to prevent overlaps */
+.app-layout-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #f8fafc;
+  background-image: radial-gradient(rgba(37, 99, 235, 0.04) 1px, transparent 1px), radial-gradient(rgba(37, 99, 235, 0.04) 1px, #f8fafc 1px);
+  background-size: 24px 24px;
+  background-position: 0 0, 12px 12px;
+}
+
+.school-auth-bg {
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  background-color: #0f172a;
+  background-image: 
+    linear-gradient(to bottom, rgba(15, 23, 42, 0.78), rgba(30, 58, 138, 0.85)),
+    url('https://images.unsplash.com/photo-1541829070764-84a7d30dd3f3?auto=format&fit=crop&w=2000&q=85');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+.school-auth-card {
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35);
+}
+
+.school-hero-banner {
+  position: relative;
+  background-image: 
+    linear-gradient(135deg, rgba(30, 58, 138, 0.92) 0%, rgba(29, 78, 216, 0.88) 100%),
+    url('https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1600&q=80');
+  background-size: cover;
+  background-position: center;
+}
+
+.app-layout-body {
+  display: flex;
+  flex: 1 1 auto;
+  position: relative;
+  min-height: calc(100vh - 56px);
+  width: 100%;
+}
+
+.app-sidebar {
+  width: 260px;
+  min-width: 260px;
+  max-width: 260px;
+  background-color: #ffffff;
+  border-right: 1px solid #e2e8f0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;
+  height: calc(100vh - 56px);
+  position: sticky;
+  top: 56px;
+  flex-shrink: 0;
+  z-index: 1020;
+  transition: transform 0.25s ease-in-out;
+}
+
+@media (max-width: 767.98px) {
+  .app-sidebar {
+    position: fixed;
+    top: 56px;
+    left: 0;
+    bottom: 0;
+    height: calc(100vh - 56px);
+    z-index: 1050;
+    transform: translateX(-100%);
+    box-shadow: 4px 0 24px rgba(0, 0, 0, 0.15);
+  }
+
+  .app-sidebar.show {
+    transform: translateX(0);
+  }
+}
+
+.app-main-content {
+  flex: 1 1 0%;
+  min-width: 0;
+  max-width: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 0;
+}
+
+/* Animations */
+@keyframes floatY {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes bellRing {
+  0% { transform: rotate(0); }
+  20% { transform: rotate(15deg); }
+  40% { transform: rotate(-15deg); }
+  60% { transform: rotate(10deg); }
+  80% { transform: rotate(-10deg); }
+  100% { transform: rotate(0); }
+}
+
+.school-cap-bounce {
+  display: inline-block;
+  animation: floatY 3s ease-in-out infinite;
+}
+
+.school-bell-animation {
+  animation: bellRing 0.8s ease-in-out;
+}
+
+.hover-shadow {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hover-shadow:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1) !important;
+}
+
+.transition-all {
+  transition: all 0.2s ease-in-out;
+}
+
+.hover-bg-light:hover {
+  background-color: #f1f5f9;
+  color: #0f172a !important;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+

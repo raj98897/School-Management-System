@@ -1,0 +1,6 @@
+{
+  "name": "School Management System",
+  "description": "A comprehensive MERN stack School Management System with Admin, Teacher, and Student portals, attendance tracking, assignments, results, notices, and online fee payments via Razorpay.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
